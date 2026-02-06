@@ -307,14 +307,14 @@ with st.sidebar:
     # Database path
     dataset_dir = st.text_input(
         "📁 Database Folder",
-        value="C:\\Users\\YASH\\Downloads\\product_images\\product_images",
+        value="dataset",
         help="Path to folder containing product images"
     )
     
     # Cache path
     cache_path = st.text_input(
         "💾 Feature Cache Path",
-        value="C:\\Users\\YASH\\Downloads\\product_images\\dataset_features.pkl",
+        value="dataset_features.pkl",
         help="Path to save/load pre-calculated features"
     )
     
