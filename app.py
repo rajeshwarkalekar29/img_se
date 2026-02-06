@@ -1,9 +1,17 @@
 import os
+import zipfile
 import cv2
 import numpy as np
 import streamlit as st
 import tempfile
 from PIL import Image
+
+ZIP_PATH = "dataset.zip"
+DATASET_DIR = "dataset"
+
+if os.path.exists(ZIP_PATH) and not os.path.exists(DATASET_DIR):
+    with zipfile.ZipFile(ZIP_PATH, 'r') as zip_ref:
+        zip_ref.extractall(DATASET_DIR)
 
 # ==========================================
 # CONFIGURATION
