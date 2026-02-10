@@ -9,6 +9,7 @@ import streamlit as st
 import cv2
 import numpy as np
 import os
+import zipfile
 import tempfile
 import pickle
 from pathlib import Path
@@ -22,6 +23,22 @@ import torch
 
 # Import Brain Similarity Engine
 from brain_similarity_model import BrainSimilarityEngine, CloudIntelligence, extract_die_number
+
+
+
+# Auto-extract dataset.zip if dataset folder not present
+ZIP_PATH = "dataset.zip"
+DATASET_DIR = "dataset"
+
+if os.path.exists(ZIP_PATH) and not os.path.exists(DATASET_DIR):
+    try:
+        with zipfile.ZipFile(ZIP_PATH, 'r') as zip_ref:
+            zip_ref.extractall(DATASET_DIR)
+        print("Dataset extracted successfully.")
+    except Exception as e:
+        print(f"Dataset extraction failed: {e}")
+
+
 
 # ==========================================
 # PAGE CONFIGURATION
