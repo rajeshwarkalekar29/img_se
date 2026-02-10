@@ -307,7 +307,9 @@ def load_feature_cache(cache_path):
 def save_feature_cache(cache_path, features_dict):
     """Save features to cache"""
     try:
-        os.makedirs(os.path.dirname(cache_path), exist_ok=True)
+        cache_dir = os.path.dirname(cache_path)
+        if cache_dir:  # Only create directory if path contains one
+            os.makedirs(cache_dir, exist_ok=True)
         with open(cache_path, 'wb') as f:
             pickle.dump(features_dict, f)
         return True
