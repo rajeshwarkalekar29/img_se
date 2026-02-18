@@ -157,7 +157,7 @@ def find_similar_images(query_path, dataset_folder, api_key, features_cache_path
 
 if __name__ == "__main__":
     MY_RAPID_KEY = "c19e1f2a59msh356118af08c17fap1e2c37jsn85f8cadc6f77"
-    CACHE_PATH = "C:\\Users\\YASH\\Downloads\\product_images\\dataset_features.pkl"
+    CACHE_PATH = "dataset_features.pkl"
     
     QUERY = input("Enter Query Image Path: ").strip().strip('"')
     DATASET = input("Enter Local Dataset Folder: ").strip().strip('"')
